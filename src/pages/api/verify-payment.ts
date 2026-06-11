@@ -1,4 +1,9 @@
-export const onRequestPost: PagesFunction = async ({ request, env }) => {
+import type { APIRoute } from 'astro';
+
+export const prerender = false;
+
+export const POST: APIRoute = async ({ request, locals }) => {
+  const env = getEnv(locals);
   const keySecret = env.RAZORPAY_KEY_SECRET;
 
   if (!keySecret) {
@@ -57,6 +62,10 @@ async function hmacSha256(message: string, secret: string) {
   );
   const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(message));
   return [...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function getEnv(locals: App.Locals) {
+  return ((locals as unknown as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {}) as Record<string, string>;
 }
 
 function json(data: unknown, status = 200) {

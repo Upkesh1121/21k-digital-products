@@ -1,4 +1,9 @@
-export const onRequestPost: PagesFunction = async ({ env }) => {
+import type { APIRoute } from 'astro';
+
+export const prerender = false;
+
+export const POST: APIRoute = async ({ locals }) => {
+  const env = getEnv(locals);
   const keyId = env.RAZORPAY_KEY_ID;
   const keySecret = env.RAZORPAY_KEY_SECRET;
 
@@ -44,6 +49,10 @@ export const onRequestPost: PagesFunction = async ({ env }) => {
     description: 'Build Your First AI Website',
   });
 };
+
+function getEnv(locals: App.Locals) {
+  return ((locals as unknown as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {}) as Record<string, string>;
+}
 
 function json(data: unknown, status = 200) {
   return new Response(JSON.stringify(data), {

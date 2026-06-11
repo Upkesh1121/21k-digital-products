@@ -1,46 +1,33 @@
-# Astro Starter Kit: Basics
+# 21K Build
+
+Premium Astro site for 21K Build with Cloudflare server output, Razorpay payment endpoints, and gated buyer resources.
+
+## Commands
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Cloudflare Deployment
 
-## 🚀 Project Structure
+Use Cloudflare Pages or Workers with the Astro Cloudflare adapter.
 
-Inside of your Astro project, you'll see the following folders and files:
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node version: `22.12.0` or newer
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+Required environment variables:
+
+```txt
+RAZORPAY_KEY_ID=your_key_id
+RAZORPAY_KEY_SECRET=your_key_secret
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The Astro config uses:
 
-## 🧞 Commands
+- `output: "server"`
+- `adapter: cloudflare({ imageService: "passthrough" })`
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Payment API routes live in `src/pages/api/` and are bundled by the Cloudflare adapter.
