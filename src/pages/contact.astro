@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact Us — 21K Build" description="Contact 21K Build for product access, support, partnerships, and digital product questions." path="/contact/">
+  <div class="page">
+    <Header />
+    <main>
+      <section class="simple-hero">
+        <p class="eyebrow">Contact</p>
+        <h1>Talk to 21K Build.</h1>
+        <p class="hero-copy">Use the form for product access, support, collaboration, or launch questions.</p>
+      </section>
+      <section class="section">
+        <form class="form" name="contact" method="post" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <label class="field">Name <input name="name" autocomplete="name" required /></label>
+          <label class="field">Email <input type="email" name="email" autocomplete="email" required /></label>
+          <label class="field">Message <textarea name="message" required></textarea></label>
+          <button class="button primary" type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</Layout>

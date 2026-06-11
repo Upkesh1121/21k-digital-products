@@ -1,0 +1,12 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="#020403"/>
+  <rect x="12" y="12" width="156" height="156" rx="32" stroke="#34F5A2" stroke-opacity=".48" stroke-width="2"/>
+  <text x="90" y="104" text-anchor="middle" fill="url(#g)" font-family="Arial, sans-serif" font-size="54" font-weight="900">21K</text>
+  <text x="90" y="130" text-anchor="middle" fill="#D7F7EC" font-family="Arial, sans-serif" font-size="18" font-weight="700">BUILD</text>
+  <defs>
+    <linearGradient id="g" x1="46" y1="62" x2="136" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34F5A2"/>
+      <stop offset="1" stop-color="#42D9FF"/>
+    </linearGradient>
+  </defs>
+</svg>

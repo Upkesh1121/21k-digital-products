@@ -1,0 +1,30 @@
+---
+const nav = [
+  ['Home', '/'],
+  ['Products', '/products/'],
+  ['Resources', '/resources/'],
+  ['Roadmap', '/#roadmap'],
+  ['About', '/about/'],
+];
+---
+
+<header class="site-header">
+  <a class="logo" href="/" aria-label="21K Build home">
+    <span class="logo-mark">21K</span>
+    <span class="logo-copy">
+      <strong>21K Build</strong>
+      <small>AI product ecosystem</small>
+    </span>
+  </a>
+  <div class="header-status" aria-label="Platform status">
+    <span></span>
+    <strong>Build Mode</strong>
+  </div>
+  <nav class="nav" aria-label="Primary navigation">
+    {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+  </nav>
+  <div class="header-actions">
+    <a class="header-link" href="/contact/">Contact</a>
+    <a class="header-cta" href="/products/">Explore Products</a>
+  </div>
+</header>

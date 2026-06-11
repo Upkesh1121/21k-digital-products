@@ -1,0 +1,28 @@
+---
+const links = [
+  ['Products', '/products/'],
+  ['Resources', '/resources/'],
+  ['About Us', '/about/'],
+  ['Contact Us', '/contact/'],
+  ['Privacy Policy', '/privacy-policy/'],
+  ['Terms & Conditions', '/terms-and-conditions/'],
+];
+---
+
+<footer class="footer">
+  <div class="footer-brand">
+    <a class="logo" href="/" aria-label="21K Build home">
+      <span class="logo-mark">21K</span>
+      <span>Build</span>
+    </a>
+    <p>Premium AI workflows, website guides, templates, and launch systems for students, creators, and first-time builders.</p>
+  </div>
+  <div class="footer-links">
+    {links.map(([label, href]) => <a href={href}>{label}</a>)}
+  </div>
+  <div class="socials" aria-label="Social links">
+    <a href="#" aria-label="21K Build on X">X</a>
+    <a href="#" aria-label="21K Build on YouTube">YT</a>
+    <a href="#" aria-label="21K Build on LinkedIn">IN</a>
+  </div>
+</footer>

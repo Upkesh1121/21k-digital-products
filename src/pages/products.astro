@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  ['Build Your First AI Website', '₹499', 'Prompts, structure, domain setup, deployment, SEO basics, and bonus resources for launching a real website.'],
+  ['AI Website Guides', 'Coming soon', 'Step-by-step website playbooks for specific niches, offers, and launch goals.'],
+  ['Digital Product Systems', 'Coming soon', 'Guides and templates for packaging useful resources into sellable digital products.'],
+  ['Business System Templates', 'Coming soon', 'AI-first operating systems for content, offers, customer research, and launch planning.'],
+];
+---
+
+<Layout title="Products — 21K Build" description="Explore 21K Build digital products, AI website guides, templates, and beginner-friendly business systems." path="/products/">
+  <div class="page">
+    <Header />
+    <main>
+      <section class="simple-hero">
+        <p class="eyebrow">Products</p>
+        <h1>Premium AI build kits for practical launches.</h1>
+        <p class="hero-copy">Guides, templates, prompts, and systems designed to help beginners create useful assets and publish with confidence.</p>
+      </section>
+      <section class="section">
+        <div class="grid two">
+          {products.map(([name, price, copy]) => (
+            <article class="card">
+              <span class="icon">21</span>
+              <h3>{name}</h3>
+              <p>{copy}</p>
+              <div class="price">{price}</div>
+              {name === 'Build Your First AI Website' && <p class="access-note">Purchase unlocks the private Resources page vault.</p>}
+              {name === 'Build Your First AI Website'
+                ? <a class="button primary" href="/resources/#buyer-vault">Pay & Unlock Resources</a>
+                : <a class="button primary" href="/contact/">Get Access</a>
+              }
+            </article>
+          ))}
+        </div>
+      </section>
+      <section class="section">
+        <div class="limited-drop" data-countdown data-deadline-hours="36">
+          <div>
+            <p class="eyebrow">Limited access window</p>
+            <h2>Only <span data-seats-left>21</span> seats available for this batch.</h2>
+            <p>Early buyers get access to the resource vault and future updates for this product batch.</p>
+          </div>
+          <div class="countdown-grid" aria-label="Offer countdown">
+            <div><strong data-days>00</strong><span>Days</span></div>
+            <div><strong data-hours>00</strong><span>Hours</span></div>
+            <div><strong data-minutes>00</strong><span>Minutes</span></div>
+            <div><strong data-seconds>00</strong><span>Seconds</span></div>
+          </div>
+          <a class="button primary" href="/resources/#buyer-vault">Reserve Access</a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</Layout>

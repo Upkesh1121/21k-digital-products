@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020403"/>
+  <circle cx="205" cy="70" r="260" fill="#34F5A2" fill-opacity=".16"/>
+  <circle cx="1010" cy="130" r="300" fill="#42D9FF" fill-opacity=".14"/>
+  <path d="M0 470h1200" stroke="#34F5A2" stroke-opacity=".12"/>
+  <g transform="translate(86 86)">
+    <rect width="96" height="76" rx="16" fill="url(#g)"/>
+    <text x="48" y="50" text-anchor="middle" fill="#00150D" font-family="Arial, sans-serif" font-size="34" font-weight="900">21K</text>
+    <text x="118" y="51" fill="#F3FFF9" font-family="Arial, sans-serif" font-size="36" font-weight="800">Build</text>
+  </g>
+  <text x="86" y="282" fill="#F3FFF9" font-family="Arial, sans-serif" font-size="76" font-weight="900">Build Real Things With AI.</text>
+  <text x="90" y="350" fill="#9FB5AD" font-family="Arial, sans-serif" font-size="30">Websites, digital products, templates, and AI business systems.</text>
+  <text x="90" y="430" fill="#34F5A2" font-family="Arial, sans-serif" font-size="26" font-weight="800">21k.in</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="96" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34F5A2"/>
+      <stop offset="1" stop-color="#42D9FF"/>
+    </linearGradient>
+  </defs>
+</svg>

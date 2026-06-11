@@ -1,11 +1,201 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SectionShell from '../components/SectionShell.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = '21K Build — Build Websites, Digital Products & AI Business Systems';
+const description = '21K Build helps beginners, students, and creators use AI to build websites, digital products, templates, and launch-ready online business systems.';
+
+const categories = [
+  ['AI Website Guides', 'Step-by-step guides to build websites using AI tools.'],
+  ['Digital Products', 'Ready-to-use resources, guides, and systems for online projects.'],
+  ['Templates', 'Website templates, business templates, content systems, and productivity systems.'],
+  ['Business Systems', 'AI-first systems for building, launching, and growing online businesses.'],
+];
+
+const faqs = [
+  ['What is 21K Build?', '21K Build is a digital products platform that helps beginners use AI to create practical websites, digital products, templates, and launch-ready business systems.'],
+  ['Who is 21K Build for?', 'It is built for students, creators, freelancers, and first-time founders who want clear execution systems instead of endless theory.'],
+  ['Do I need coding skills?', 'No. The products focus on beginner-friendly AI workflows, no-code website building, structured prompts, and practical setup steps.'],
+  ['What digital products are available?', '21K Build includes website guides, AI prompts, templates, business systems, deployment resources, and launch checklists.'],
+  ['Can I build websites using AI?', 'Yes. The guides show how to plan, prompt, structure, deploy, and improve websites with AI-assisted workflows.'],
+  ['Is this beginner friendly?', 'Yes. Each product is designed with simple instructions, practical examples, and a build-first approach for beginners.'],
+  ['How do I access the products?', 'Products are delivered digitally after purchase, with instant access to the included files and guides.'],
+  ['Will I get future updates?', 'Future updates may be included for eligible products as the workflows, tools, and resources improve.'],
+  ['Can students use 21K Build?', 'Yes. Students can use 21K Build to learn execution, build portfolio projects, create digital products, and test online business ideas.'],
+  ['What is included in the ₹499 product?', 'Build Your First AI Website includes AI website prompts, a website structure guide, domain setup guidance, deployment steps, SEO basics, and bonus resources.'],
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(([name, answer]) => ({
+    '@type': 'Question',
+    name,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description} schema={faqSchema}>
+  <div class="page">
+    <Header />
+    <main>
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">AI product ecosystem for builders</p>
+            <h1>Build Real Things With AI.</h1>
+            <p class="hero-copy">21K Build helps students, creators, and beginners use AI to create websites, digital products, templates, business systems, and launch-ready online projects.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="/products/">Explore Products</a>
+              <a class="button secondary" href="#roadmap">Start Building</a>
+            </div>
+            <div class="trust-row" aria-label="Trust badges">
+              <span class="badge">Beginner Friendly</span>
+              <span class="badge">AI-Powered Workflows</span>
+              <span class="badge">Digital Products</span>
+              <span class="badge">Launch Focused</span>
+            </div>
+          </div>
+          <aside class="signal-panel" aria-label="21K Build product interface preview">
+            <div class="build-core" aria-hidden="true">
+              <span class="core-face core-front">21K</span>
+              <span class="core-face core-back"></span>
+              <span class="core-face core-right"></span>
+              <span class="core-face core-left"></span>
+              <span class="core-face core-top"></span>
+              <span class="core-face core-bottom"></span>
+            </div>
+            <div class="orbit-stack" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="screen">
+              <div class="screen-row"><strong>Prompt Stack</strong><span>AI Website</span><i class="screen-dot"></i></div>
+              <div class="screen-row"><strong>Structure Guide</strong><span>Landing + SEO</span><i class="screen-dot"></i></div>
+              <div class="screen-row"><strong>Launch System</strong><span>Domain + Deploy</span><i class="screen-dot"></i></div>
+              <div class="screen-row"><strong>Product Blueprint</strong><span>Offer + Assets</span><i class="screen-dot"></i></div>
+              <div class="screen-row"><strong>Growth Loop</strong><span>Content + Sales</span><i class="screen-dot"></i></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <SectionShell eyebrow="Product categories" title="Practical assets for shipping online projects." text="Start with a focused guide, template, or business system and move from idea to launch with a clear workflow.">
+        <div class="grid four">
+          {categories.map(([name, copy], index) => (
+            <article class="card">
+              <span class="icon">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{name}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+      </SectionShell>
+
+      <SectionShell eyebrow="3D build console" title="Click through the 21K product structure." text="A premium interactive mockup showing how each product layer connects prompts, templates, launch systems, and growth assets.">
+        <div class="mockup-console" data-active-mockup="website">
+          <div class="mockup-stage" aria-label="Interactive 3D product mockup">
+            <div class="mockup-device" aria-hidden="true">
+              <div class="device-topbar"><span></span><span></span><span></span></div>
+              <div class="device-screen">
+                <div class="screen-sidebar">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+                <div class="screen-main">
+                  <div class="mockup-pill">AI WEBSITE BUILD</div>
+                  <div class="mockup-line wide"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-grid-mini">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-layer layer-prompts"><strong>Prompt Engine</strong><span>AI prompts</span></div>
+            <div class="mockup-layer layer-template"><strong>Template System</strong><span>Pages + blocks</span></div>
+            <div class="mockup-layer layer-launch"><strong>Launch Core</strong><span>Domain + deploy</span></div>
+            <div class="mockup-layer layer-growth"><strong>Growth Loop</strong><span>SEO + content</span></div>
+          </div>
+
+          <div class="mockup-controls" role="tablist" aria-label="Choose product structure">
+            <button class="mockup-choice is-active" type="button" data-mockup="website" role="tab" aria-selected="true">
+              <span>01</span>
+              <strong>AI Website</strong>
+              <small>Prompted site structure, deployment, SEO basics.</small>
+            </button>
+            <button class="mockup-choice" type="button" data-mockup="product" role="tab" aria-selected="false">
+              <span>02</span>
+              <strong>Digital Product</strong>
+              <small>Offer map, resource bundle, delivery flow.</small>
+            </button>
+            <button class="mockup-choice" type="button" data-mockup="system" role="tab" aria-selected="false">
+              <span>03</span>
+              <strong>Business System</strong>
+              <small>Research, content, launch, and growth loops.</small>
+            </button>
+          </div>
+        </div>
+      </SectionShell>
+
+      <SectionShell eyebrow="Featured product" title="Build Your First AI Website" text="A compact execution kit for beginners who want to launch a real website with AI assistance.">
+        <div class="featured">
+          <article class="card">
+            <p class="eyebrow">Launch kit</p>
+            <h3>Build Your First AI Website</h3>
+            <div class="price">₹499 <span>instant digital access</span></div>
+            <p>Use structured AI prompts, a clear page blueprint, domain setup guidance, deployment instructions, and SEO basics to build and publish your first project without getting stuck in tutorial loops.</p>
+            <div class="actions">
+              <a class="button primary" href="/products/">Get Instant Access</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Included inside</h3>
+            <ul class="feature-list">
+              <li>AI website prompts</li>
+              <li>Website structure guide</li>
+              <li>Domain setup guide</li>
+              <li>Deployment guide</li>
+              <li>SEO basics</li>
+              <li>Bonus resources</li>
+            </ul>
+          </article>
+        </div>
+      </SectionShell>
+
+      <SectionShell eyebrow="Roadmap" title="The 21K Build Roadmap" text="A direct path from learning the basics to publishing and improving real digital products.">
+        <div class="roadmap" id="roadmap">
+          {['Learn', 'Build', 'Launch', 'Grow', 'Scale', 'Repeat'].map((step) => <div class="roadmap-step"><h3>{step}</h3></div>)}
+        </div>
+      </SectionShell>
+
+      <SectionShell eyebrow="Execution over endless tutorials" title="What 21K Build helps you do">
+        <article class="content-block">
+          <p>21K Build is a digital products platform for people who want to use AI to build useful online assets, not just collect more information. It is made for students, creators, beginners, freelancers, and early founders who want a practical way to create websites, templates, digital products, and AI business systems. The platform focuses on execution: clear prompts, repeatable workflows, launch checklists, and product structures that help you move from an idea to something people can actually visit, download, buy, or use.</p>
+          <p>Many beginners search for an AI website builder because they want speed, but speed alone is not enough. A good website still needs a clear offer, strong page structure, readable copy, basic SEO, trust signals, and a simple path for visitors to take action. 21K Build helps beginners build websites with AI by showing how to plan the site, generate useful copy, organize sections, choose a no-code website building path, set up a domain, publish the project, and improve it over time. The goal is not to make AI replace thinking. The goal is to use AI prompts and structured systems to make better decisions faster.</p>
+          <p>The same approach applies to digital products. A digital product business can start with a guide, checklist, prompt pack, website template, content system, Notion-style operating system, or business workflow. Instead of waiting until everything feels perfect, beginners can package a specific solution for a specific audience and test it. 21K Build provides practical digital products, website templates, and AI business systems that reduce blank-page confusion and help new builders understand what to create, how to present it, and how to launch it in a professional way.</p>
+          <p>This is especially useful for online business for students. Students often have limited time, limited money, and limited experience, but they can still learn valuable skills by building small real projects. A student can use 21K Build to create a portfolio website, publish a simple resource, test a niche template, build a content workflow, or launch a focused digital product. These projects teach execution, positioning, writing, design, basic SEO, and customer thinking far better than watching endless tutorials without shipping anything.</p>
+          <p>21K Build is intentionally practical. Tutorials can be useful, but they often create a loop where beginners keep preparing and never launch. Practical execution is different. You learn by choosing a problem, using AI to speed up research and production, building the first version, publishing it, and improving it from feedback. That cycle builds confidence and skill. Whether you want an AI website builder workflow, no-code website building guidance, digital product business templates, or AI prompts for product creation, 21K Build gives you a focused starting point. It helps you build real assets, launch faster, and develop the judgment needed to create better online projects over time.</p>
+        </article>
+      </SectionShell>
+
+      <SectionShell eyebrow="FAQ" title="Common questions">
+        <div class="faq-list" id="faq">
+          {faqs.map(([question, answer]) => (
+            <details>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </SectionShell>
+    </main>
+    <Footer />
+  </div>
 </Layout>
